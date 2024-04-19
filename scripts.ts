@@ -1,15 +1,18 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
+import { dot } from "node:test/reporters";
+dotenv.config()
 
 const app = express()
 app.use(express.json());
 app.use(cors());
-
+const Port = process.env.PORT
 const prisma = new PrismaClient()
 
-app.listen(5000, () => {
-    console.log(`Server listening at http://localhost:5000`);
+app.listen(Port, () => {
+    console.log(`Server listening at ${Port}`);
 });
     
 app.get('/jobs', async(req: express.Request, res: express.Response) => {
