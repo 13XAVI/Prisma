@@ -37,3 +37,7 @@ Fetches all jobs from the database.
 ### GET /jobs/:id
 
 Fetches a single job by its ID.
+
+### Working API
+
+- https://prisma-zt8q.onrender.com/jobs
